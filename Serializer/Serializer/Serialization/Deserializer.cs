@@ -284,8 +284,10 @@ namespace UnityEngine
             SkipWhitespace();
 
             // You've got the id # of the object.  Are we done now?
-            throw new NotImplementedException("Fill me in");
-
+            if (idTable.ContainsKey(id))
+            {
+                return idTable[id];
+            }
             // Assuming we aren't done, let's check to make sure there's a { next
             SkipWhitespace();
             if (End)
@@ -306,14 +308,15 @@ namespace UnityEngine
                     $"Expected a type name (a string) in 'type: ...' expression for object id {id}, but instead got {typeName}");
 
             // Great!  Now what?
-            throw new NotImplementedException("Fill me in");
+            object o = Utilities.MakeInstance(type);
+            idTable.Add(id, o);
 
             // Read the fields until we run out of them
             while (!End && PeekChar != '}')
             {
                 var (field, value) = ReadField(id);
                 // We've got a field and a value.  Now what?
-                throw new NotImplementedException("Fill me in");
+                Utilities.SetFieldByName(o, field, value);
             }
 
             if (End)
@@ -322,7 +325,7 @@ namespace UnityEngine
             GetChar();  // Swallow close bracket
 
             // We're done.  Now what?
-            throw new NotImplementedException("Fill me in");
+            return o;
         }
 
     }
