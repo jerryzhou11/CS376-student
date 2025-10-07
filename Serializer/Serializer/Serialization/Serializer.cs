@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Reflection.Metadata;
 
 namespace UnityEngine
 {
@@ -190,28 +191,28 @@ namespace UnityEngine
             switch (o)
             {
                 case null:
-                    throw new NotImplementedException("Fill me in");
+                    Write("null");
                     break;
 
                 case int i:
-                    throw new NotImplementedException("Fill me in");
+                    Write(i);
                     break;
 
                 case float f:
-                    throw new NotImplementedException("Fill me in");
+                    Write(f);
                     break;
 
                 // Not: don't worry about handling strings that contain quote marks
                 case string s:
-                    throw new NotImplementedException("Fill me in");
+                    Write("\"" + s + "\"");
                     break;
 
                 case bool b:
-                    throw new NotImplementedException("Fill me in");
+                    Write(b);
                     break;
 
                 case IList list:
-                    throw new NotImplementedException("Fill me in");
+                    WriteList(list);
                     break;
 
                 default:
@@ -231,7 +232,28 @@ namespace UnityEngine
         /// <param name="o">Object to serialize</param>
         private void WriteComplexObject(object o)
         {
-            throw new NotImplementedException("Fill me in");
+            (int id, bool isNew) = GetId(o);
+            Write("#"+ id);
+            if (isNew)
+            {
+                WriteBracketedExpression(
+                    "{",
+                    () =>
+                    {
+                        //write type
+                        Write("type: \""+ o.GetType().Name +"\",");
+                        //write every field 
+                        IEnumerable<KeyValuePair<string, object>> fields = Utilities.SerializedFields(o);
+                        bool firstOne = true;
+                        foreach (var pair in fields)
+                        {
+                            WriteField(pair.Key, pair.Value, firstOne);
+                            firstOne = false;
+                        }
+                    },
+                    "}"
+                    );
+            }
         }
     }
 }

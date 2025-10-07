@@ -1,40 +1,92 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\SerializerTests\\SerializerTests.csproj": {}
+    "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/SerializerTests/SerializerTests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\SerializerTests\\SerializerTests.csproj": {
+    "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/Serializer/Serializer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\SerializerTests\\SerializerTests.csproj",
-        "projectName": "SerializerTests",
-        "projectPath": "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\SerializerTests\\SerializerTests.csproj",
-        "packagesPath": "C:\\Users\\ianho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\SerializerTests\\obj\\",
+        "projectUniqueName": "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/Serializer/Serializer.csproj",
+        "projectName": "Serializer",
+        "projectPath": "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/Serializer/Serializer.csproj",
+        "packagesPath": "/Users/jerryzhou/.nuget/packages/",
+        "outputPath": "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/Serializer/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ianho\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/jerryzhou/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/jerryzhou/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/SerializerTests/SerializerTests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/SerializerTests/SerializerTests.csproj",
+        "projectName": "SerializerTests",
+        "projectPath": "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/SerializerTests/SerializerTests.csproj",
+        "packagesPath": "/Users/jerryzhou/.nuget/packages/",
+        "outputPath": "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/SerializerTests/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jerryzhou/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\Serializer\\Serializer.csproj": {
-                "projectPath": "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\Serializer\\Serializer.csproj"
+              "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/Serializer/Serializer.csproj": {
+                "projectPath": "/Users/jerryzhou/Documents/GitHub/CS376-student/Serializer/Serializer/Serializer.csproj"
               }
             }
           }
@@ -47,9 +99,9 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
+          "auditMode": "all"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -90,73 +142,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\Serializer\\Serializer.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\Serializer\\Serializer.csproj",
-        "projectName": "Serializer",
-        "projectPath": "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\Serializer\\Serializer.csproj",
-        "packagesPath": "C:\\Users\\ianho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ianho\\Documents\\GitHub\\CS376-student\\Serializer\\Serializer\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\ianho\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net9.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net9.0": {
-            "targetAlias": "net9.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
-      },
-      "frameworks": {
-        "net9.0": {
-          "targetAlias": "net9.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/jerryzhou/.dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
