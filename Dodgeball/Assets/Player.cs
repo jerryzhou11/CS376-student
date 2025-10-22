@@ -26,6 +26,16 @@ public class Player : MonoBehaviour
     /// </summary>
     public float OrbVelocity = 10;
 
+    //rigidbody2d
+    public Rigidbody2D body;
+
+    public bool shotLastTick = false;
+
+    void Start()
+    {
+        this.body = this.GetComponent<Rigidbody2D>();
+    }
+
     /// <summary>
     /// Handle moving and firing.
     /// Called by Uniity every 1/50th of a second, regardless of the graphics card's frame rate
@@ -44,7 +54,18 @@ public class Player : MonoBehaviour
     /// </summary>
     void MaybeFire()
     {
-        // TODO
+        if (!shotLastTick)
+        {
+            if (Input.GetAxis("Fire") > 0)
+            {
+                this.FireOrb();
+                shotLastTick = true;
+            }
+        }
+        else
+        {
+            shotLastTick = false;
+        }
     }
 
     /// <summary>
@@ -54,7 +75,8 @@ public class Player : MonoBehaviour
     /// </summary>
     private void FireOrb()
     {
-        // TODO
+        var orb = Instantiate(OrbPrefab, this.transform.position+transform.right, Quaternion.identity);
+        orb.GetComponent<Rigidbody2D>().linearVelocity = this.OrbVelocity * transform.right;
     }
 
     /// <summary>
@@ -65,7 +87,13 @@ public class Player : MonoBehaviour
     /// </summary>
     void Manoeuvre()
     {
-        // TODO
+        var x = Input.GetAxis("Horizontal");
+        var y = Input.GetAxis("Vertical");
+        Vector2 direction = new Vector2(x, y);
+        direction *= this.EnginePower;
+        this.body.AddForce(direction);
+        
+        this.body.angularVelocity = Input.GetAxis("Rotate") * this.RotateSpeed;
     }
 
     /// <summary>
