@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 /// Controls slingshot-style launching of projectile.
 /// This component lives inside the projectile, not the catapult.
 /// </summary>
-public class ProjectileThrower : MonoBehaviour {
+public class ProjectileThrower : MonoBehaviour
+{
 
     /// <summary>
     /// Cached copy of the RigidBody2D so we don't have to keep looking it up.
@@ -13,10 +14,12 @@ public class ProjectileThrower : MonoBehaviour {
     /// to do this kind of caching, but their documentation is inconsistent.  So we'll cache.
     /// </summary>
     private Rigidbody2D myRigidBody;
+
     /// <summary>
     /// The spring attached the projectile to the catapult base
     /// </summary>
-    private SpringJoint2D springJoint; 
+    private SpringJoint2D springJoint;
+
     /// <summary>
     /// Where the spring attaches to the catapult.
     /// Initialized to the initial location of the projectile.
@@ -28,7 +31,12 @@ public class ProjectileThrower : MonoBehaviour {
     /// </summary>
     FiringState firingState = FiringState.Idle;
 
-    enum FiringState { Idle, Aiming, Firing }
+    enum FiringState
+    {
+        Idle,
+        Aiming,
+        Firing
+    }
 
     /// <summary>
     /// Position of a GameObject in screen coordinates
@@ -71,10 +79,17 @@ public class ProjectileThrower : MonoBehaviour {
     /// <returns></returns>
     bool WaitingForPhysicsToSettle()
     {
-        return true;  // Replace this
+        //returns true if there is any RigidBody2D that is on screen and awake
+        foreach (Rigidbody2D body in FindObjectsOfType<Rigidbody2D>())
+        {
+            if (IsActive(body)) return true;
+            
+        }
+        return false;
     }
 
-    /// <summary>
+
+/// <summary>
     /// Initialize component
     /// </summary>
     internal void Start() {
@@ -86,6 +101,12 @@ public class ProjectileThrower : MonoBehaviour {
     internal void Update()
     {
         FireControl();
+        //reloads the level if the projectile has been fired (firingState is at
+        //Firing or beyond) and we aren’t waiting for physics to settle
+        if (firingState == FiringState.Firing && !WaitingForPhysicsToSettle() || Input.GetKeyDown(KeyCode.Escape))
+        {
+            ResetForFiring();
+        }
     }
 
     /// <summary>
