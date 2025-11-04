@@ -1,0 +1,18 @@
+Welcome to Deering Dash!
+
+This is a platformer in which the player control Willie the Wildcat(the sprite in the middle of the screen) jumping from platform to platform to collect tuition falling from the sky(green money) while avoiding federal funding freezes(ice blocks) that fall from the sky as well as move horizontally across the screen.
+
+Controls:
+A and D to move left and right respectively
+W and/or space to jump
+Shift to Dash(quickly speed a short distance) (1 second cooldown)
+Escape: End game early(set timer to 0)
+R: Restart game(only if on end screen)
+
+Scoring:
+Every piece of money you pick up gives you 5 points. Every piece of ice that hits you makes you lose 5 points.
+
+But watch out - if money hits the ground, it disappears! 
+
+The game ends after 1 minute has passed, or if the player presses escape, both of which display a final score and resets the game.
+After the game ends, you can press R to reset the game.
